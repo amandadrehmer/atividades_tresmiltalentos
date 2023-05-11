@@ -18,6 +18,9 @@ console.log(filme.elenco[filme.elenco.length - 1])
 console.log(filme.transmissoesHoje[2])
 
 a) O que vai ser impresso no console?*/
+// No 'console.log(filme.elenco[0])' irá aparecer Matheys Nachtergaele. 
+// No 'console.log(filme.elenco[filme.elenco.length - 1])' irá aparecer Virginia Cavendish.
+// No console.log(filme.transmissoesHoje[2]) irá aparecer canal: "Globo" horario: "14h"
 
 // -------------------------------------------------------------------------------------------------
 /* 2. Leia o código embaixo:
@@ -37,8 +40,9 @@ console.log(gato)
 console.log(tartaruga) 
 
 a) O que vai ser impresso no console?
-
 b) O que faz a sintaxe dos três pontos antes do nome de um objeto? */
+
+// a) No 'console.log(cachorro)' irá aparecer o objeto de cachorro, imprimindo todo os dados dentro dos {}. No 'console.log(gato)' será impresso todos os dados dentro do objeto cachorro, mas o nome será 'Juba', ao invés de 'Juca'. No 'console.log(tartaruga)' será impresso todos os dados presentes no objeto gato, mas ao invés de 'Juba', será impresso Jubo no nome, pois a função replaceAll() muda as letras 'a' para 'o'.
 
 // -------------------------------------------------------------------------------------------------
 /* 3. Leia o código abaixo:
@@ -57,8 +61,10 @@ b) O que faz a sintaxe dos três pontos antes do nome de um objeto? */
 // console.log(minhaFuncao(pessoa, "altura"))
 
 // a) O que vai ser impresso no console?
+// Aparecerá false e undefined.
 
 // b) Explique o valor impresso no console. Você sabe por que isso aconteceu? */
+// False, pois está sendo atribuido um boolean false para o objeto backender. E o 'undefined' aparece, pois não foi definido nenhum objeto denominado 'altura'.
 
 // -------------------------------------------------------------------------------------------------
 // Exercícios de escrita de código
@@ -77,17 +83,67 @@ b) O que faz a sintaxe dos três pontos antes do nome de um objeto? */
     b) Agora, usando o operador spread, crie um novo objeto mantendo o valor da propriedade nome, mas com uma nova lista de três apelidos. Depois, chame a função feita no item anterior passando como argumento o novo objeto
     */
 
+// const pessoa = {
+//     nome: 'Amanda',
+//     apelidos: ['Mands','Amandex', 'Nana']
+// }
+
+// function receberObjeto (objeto){
+//     console.log(`Eu sou ${objeto.nome}, mas pode me chamar de : ${objeto.apelidos[0]}, ${objeto.apelidos[1]}, ${objeto.apelidos[2]}`)
+// }
+
+// receberObjeto(pessoa);
+
+// const pessoa2 = {
+//     ...pessoa,
+//     apelidos:['Ju', 'Jubs', 'Xs']
+// };
+
+// function receberNova (objeto2){
+//     console.log(`Eu sou ${objeto2.nome}, mas pode me chamar de : ${objeto2.apelidos[0]}, ${objeto2.apelidos[1]}, ${objeto2.apelidos[2]}`)
+// }
+
+// receberNova(pessoa2)
+
 // -------------------------------------------------------------------------------------------------
 /* 2. Resolva os passos a seguir: 
     
-    a) Crie dois objetos diferentes com as seguintes propriedades: nome, idade e profissão. 
+    a) Crie dois objetos diferentes com as seguintes propriedades: nome, idade e profissão. */
+
+// const pessoa2A = {
+//     nome: "Amanda",
+//     idade: 17,
+//     profissao: "Estudante"
+// }
+
+// const pessoa2a = {
+//     nome: "Eduardo",
+//     idade: 29,
+//     profissao: "Engenheiro"
+// }
     
-    b) Escreva uma função que receba um objeto de cada vez e retorne um array com as seguintes informações:
+   /* b) Escreva uma função que receba um objeto de cada vez e retorne um array com as seguintes informações:
     1. O valor de `nome`
     2. O numero de caracteres do valor `nome`
     3. O valor de `idade`
     4. O valor de `profissão`
     5. O numero de caracteres do valor `profissão` */
+
+// function imprimir2(objeto1, objeto2) {
+//     const listaInformacoes = []
+//     function addInformacoes(objeto) {
+//         const { nome, idade, profissao } = objeto
+//         listaInformacoes.push(nome, nome.length, idade, profissao, profissao.length);
+//     }
+  
+//     addInformacoes(objeto1);
+//     addInformacoes(objeto2);
+  
+//     return listaInformacoes;
+// }
+
+// const dados = imprimir2(pessoa2A, pessoa2a);
+// console.log(dados);
 
 // -------------------------------------------------------------------------------------------------
 /* 3. Resolva os passos a seguir: 
@@ -100,3 +156,30 @@ b) O que faz a sintaxe dos três pontos antes do nome de um objeto? */
 
     d) Imprima a variável carrinho e garanta que ela agora seja um array preenchido com três objetos
     */
+
+// const carrinho = []
+
+// const objeto1 ={
+//     nome:'Melancia',
+//     disponibilidade: true
+// }
+
+// const objeto2 ={
+//     nome: 'Uva',
+//     disponibilidade: true
+// }
+
+// const objeto3 ={
+//     nome: 'Abacaxi',
+//     disponibilidade: true
+// }
+
+// function recebeFruta (objeto){
+//     carrinho.push(objeto)
+// }
+
+// recebeFruta(objeto1)
+// recebeFruta(objeto2)
+// recebeFruta(objeto3)
+// console.log(carrinho)
+
